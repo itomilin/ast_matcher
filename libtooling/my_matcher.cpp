@@ -122,4 +122,3 @@ int main(int argc, const char *argv[])
 
     return tool.run(newFrontendActionFactory(&finder).get());
 }
-
