@@ -1,0 +1,5 @@
+digraph "CFG for '_ZN10CalculatorIfE3addEv' function" {
+	label="CFG for '_ZN10CalculatorIfE3addEv' function";
+
+	Node0x55d97c6cd320 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{entry:\l  %this.addr = alloca %class.Calculator.0*, align 8\l  store %class.Calculator.0* %this, %class.Calculator.0** %this.addr, align 8\l  %this1 = load %class.Calculator.0*, %class.Calculator.0** %this.addr, align 8\l  %num1 = getelementptr inbounds %class.Calculator.0, %class.Calculator.0*\l... %this1, i32 0, i32 0\l  %0 = load float, float* %num1, align 4\l  %num2 = getelementptr inbounds %class.Calculator.0, %class.Calculator.0*\l... %this1, i32 0, i32 1\l  %1 = load float, float* %num2, align 4\l  %add = fadd float %0, %1\l  ret float %add\l}"];
+}

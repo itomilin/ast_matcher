@@ -1,0 +1,5 @@
+digraph "CFG for '_ZN10CalculatorIiEC2Eii' function" {
+	label="CFG for '_ZN10CalculatorIiEC2Eii' function";
+
+	Node0x55d97c6c7630 [shape=record,color="#b70d28ff", style=filled, fillcolor="#b70d2870",label="{entry:\l  %this.addr = alloca %class.Calculator*, align 8\l  %n1.addr = alloca i32, align 4\l  %n2.addr = alloca i32, align 4\l  store %class.Calculator* %this, %class.Calculator** %this.addr, align 8\l  store i32 %n1, i32* %n1.addr, align 4\l  store i32 %n2, i32* %n2.addr, align 4\l  %this1 = load %class.Calculator*, %class.Calculator** %this.addr, align 8\l  %0 = load i32, i32* %n1.addr, align 4\l  %num1 = getelementptr inbounds %class.Calculator, %class.Calculator* %this1,\l... i32 0, i32 0\l  store i32 %0, i32* %num1, align 4\l  %1 = load i32, i32* %n2.addr, align 4\l  %num2 = getelementptr inbounds %class.Calculator, %class.Calculator* %this1,\l... i32 0, i32 1\l  store i32 %1, i32* %num2, align 4\l  ret void\l}"];
+}
