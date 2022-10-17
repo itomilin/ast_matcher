@@ -3,11 +3,29 @@
 set -e
 
 # # cmake version 3.16.3
-# # /usr/share/modules/modulesfiles/llvm-project/12.0.0
-# # module avail
-# # module load llvm-project/12.0.0
-# # module list
-# # module purge
+
+### How to use module cmd: ###
+#
+# mkdir /usr/share/modules/modulefiles/llvm-project
+# cp ${MODULESHOME}/modulefiles/null /usr/share/modules/modulefiles/llvm-project/13.0.1
+# module use --append /usr/share/modules/modulefiles/llvm-project
+# Paste some variables what u need to end of file: /usr/share/modules/modulefiles/llvm-project/13.0.1
+# For ex:
+
+#set     topdir          /home/sandbox/hpc
+#set     version         13.0.1
+#
+#setenv          LLVM_BUILD           $topdir/main/build/llvm-project/$version"
+#setenv          TEST_VAR             $topdir/dev/null
+#
+#prepend-path    PATH            $topdir/llvm-project/$version
+
+##############################
+# Run these cmds, to make sure performance:
+# module avail                                   # check all modules.
+# module load llvm-project/13.0.1                # load module.
+# module list                                    # show current load modules.
+# module purge/module unload llvm-project/13.0.1 # remove all modules or selected module.
 
 apt install -y git cmake ninja-build environment-modules
 
