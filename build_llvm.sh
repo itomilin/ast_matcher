@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+#set -e
 
 # # cmake version 3.16.3
 
