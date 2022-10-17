@@ -1,4 +1,6 @@
-# /bin/bash
+#!/bin/bash
+
+set -e
 
 # # cmake version 3.16.3
 # # /usr/share/modules/modulesfiles/llvm-project/12.0.0
@@ -7,10 +9,15 @@
 # # module list
 # # module purge
 
+apt install -y git cmake ninja-build environment-modules
+
+base_dir="/home/sandbox/hpc"
 llvm_version="llvmorg-13.0.1"
 llvm_build="/home/sandbox/hpc/main/build/llvm-project/${llvm_version}"
 llvm_install="/home/sandbox/hpc/llvm-project/${llvm_version}"
 llvm_src="/home/sandbox/hpc/main"
+
+mkdir -p $base_dir
 
 create_worktree() {
     printf "%s\n\n" "<<<<<Check monorepo>>>>>"
@@ -48,18 +55,17 @@ build_llvm() {
     ninja install
 }
 
-#if [[ -d "/home/sandbox/hpc/main" ]]
-#then
-#    printf "%s\n\n" "<<<<<Repo already exist.>>>>>"
-#    cd /home/sandbox/hpc/main
-#    create_worktree
-#else
-#    printf "%s\n\n" "<<<<<Downloading repo.>>>>>"
-#    cd /home/sandbox/hpc/
-#    git clone https://github.com/llvm/llvm-project.git ${llvm_src}
-#    cd /home/sandbox/hpc/main
-#    create_worktree
-#fi
+if [[ -d "/home/sandbox/hpc/main" ]]
+then
+    printf "%s\n\n" "<<<<<Repo already exist.>>>>>"
+    cd /home/sandbox/hpc/main
+    create_worktree
+else
+    printf "%s\n\n" "<<<<<Downloading repo.>>>>>"
+    cd /home/sandbox/hpc/
+    git clone https://github.com/llvm/llvm-project.git ${llvm_src}
+    cd /home/sandbox/hpc/main
+    create_worktree
+fi
 
 build_llvm
-
