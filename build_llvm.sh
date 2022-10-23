@@ -27,7 +27,7 @@
 # module list                                    # show current load modules.
 # module purge/module unload llvm-project/13.0.1 # remove all modules or selected module.
 
-apt install -y git cmake ninja-build environment-modules
+apt install -y git cmake ninja-build environment-modules graphviz g++ gcc
 
 base_dir="/home/sandbox/hpc"
 llvm_version="llvmorg-13.0.1"
@@ -87,3 +87,4 @@ else
 fi
 
 build_llvm
+
